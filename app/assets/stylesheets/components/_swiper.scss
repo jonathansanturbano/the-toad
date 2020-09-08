@@ -1,0 +1,68 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+#swipe-container{
+  z-index: 0;
+}
+
+#swipe-container{
+  z-index: 0;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swipe-slide{
+  z-index: 0;
+}
+
+// Smallest device
+@media (min-height: 100px) and (max-height: 649px) {
+  .swiper-container {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-height: 650px) and (max-height: 699px) {
+  .swiper-container {
+    width: 100%;
+    height: 360px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-height: 700px) and (max-height: 749px) {
+  .swiper-container {
+    width: 100%;
+    height: 380px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-height: 750px) and (max-height: 900px) {
+    .swiper-container {
+      width: 100%;
+      height: 450px;
+    }
+  }

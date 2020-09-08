@@ -1,0 +1,32 @@
+.cart {
+  color: $yellow;
+  background-color: rgba(254, 254, 252, 1);
+  box-shadow: 1px 2px 2.3px;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.9rem;
+  width: 3.9rem;
+  margin: 12px;
+  transition: color .5s;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: none;
+    color: rgb(112, 111, 129);
+    font-style: bold;
+  }
+}
+
+@media (min-width: 992){
+  .cart {
+    background-color: none;
+  }
+}
+
+.hidden {
+  display: none;
+}

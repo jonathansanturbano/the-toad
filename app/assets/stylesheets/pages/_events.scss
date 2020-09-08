@@ -1,0 +1,41 @@
+.event-card{
+  overflow: hidden;
+  height: 120px;
+  background: $light-blue;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: inherit;
+  margin: 2rem 0;
+  border: none;
+}
+
+.event-date{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $mid-blue;
+  margin: 0px;
+  width: 220px;
+  height: 100%;
+  font-weight: bold;
+
+  p{
+    margin: 0;
+  }
+}
+
+.event-description{
+  padding: 1rem;
+}
+
+@media (max-width: 767px) {
+  .event-card{
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .event-date{
+    width: 100%;
+  }
+}

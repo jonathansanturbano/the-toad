@@ -1,0 +1,17 @@
+<% provide(:title, 'FanArt') %>
+
+<div class="swiper-container" id="swipe-container">
+    <div class="swiper-wrapper" id="swipe-wrapper">
+      <% i = 1 %>
+      <% @fanarts.each do |fanart| %>
+        <div class="swiper-slide">
+          <%= cl_image_tag fanart.photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
+          <div class="fanart-author">
+            <p><%= fanart.author%></p>
+            <p><%= "#{i} / #{@fanarts.count}" %> </p>
+          </div>
+          <% i += 1 %>
+        </div>
+      <% end %>
+    </div>
+</div>

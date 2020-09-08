@@ -1,0 +1,18 @@
+<% provide(:title, 'Events') %>
+<!-- Don't Forget to create click-onc carousel functionality and slide right to see real-sized images -->
+
+<div class="text-center">
+  <div class="cards">
+    <% @events.each do |event| %>
+      <div class="event-card">
+        <div class="event-date">
+          <p><%= event.time.strftime('%a %-d %B %Y')%></p>
+          <p><%= event.time.strftime('%n %kH%M %p') %></p>
+        </div>
+        <div class="event-description">
+          <%= event.description %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

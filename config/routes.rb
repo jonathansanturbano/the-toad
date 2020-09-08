@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'basket/show'
+  get 'fanarts/index'
+  get 'events/index'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users
   root to:'pages#home';
 

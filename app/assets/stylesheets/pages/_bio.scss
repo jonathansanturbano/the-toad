@@ -1,0 +1,40 @@
+.bio-description{
+  text-align: justify;
+  margin: 1rem 0;
+  text-align: justify;
+}
+
+
+.illustrator-title{
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: $yellow;
+  font-style: italic;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.illustrator-card{
+  margin: 1rem 0;
+
+  h3{
+    font-style: italic;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .illustrator-card{
+      display: flex;
+
+    img{
+      height: fit-content;
+      align-self: center;
+      height: 150px;
+    }
+  }
+
+    .bio-description{
+      margin: 1rem 0 1rem 1rem;
+  }
+}

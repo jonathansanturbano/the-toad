@@ -1,0 +1,29 @@
+
+.devise-title {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: $yellow;
+  font-style: italic;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-boxes {
+  text-align: center;
+  width: min-content;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+@media (min-width: 992px) {
+  .custom-boxes {
+    width: min-content;
+    padding: 1rem 5rem;
+  }
+}

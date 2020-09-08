@@ -1,0 +1,41 @@
+.blog-cards {
+  a{
+    text-decoration: none;
+  }
+}
+
+.blog-card{
+  background: $light-blue;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  color: black;
+  padding: 1rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.blog-date{
+  font-style: italic;
+  font-size: 16px;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.blog-title{
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: $yellow;
+  margin: 2rem 0;
+}
+
+
+@media (min-width: 991px) {
+  .blog-date{
+    position: absolute;
+    background-color: $mid-blue;
+  }
+.blog-content{
+  text-align: justify;
+  }
+}

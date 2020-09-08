@@ -1,0 +1,94 @@
+.book{
+  background: $light-blue;
+  border-radius: 4px;
+  box-shadow: 1px 2px 3px rgb(179, 193, 217);
+  padding: 1rem;
+  margin: 2rem 0;
+
+  img{
+    height: 180px;
+    width: 240px;
+    object-fit: cover;
+    object-position: right;
+  }
+}
+
+.signed-banner{
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  background-color: antiquewhite;
+  border: gold 1px dotted;
+  font-style: italic;
+  border-radius: 2px;
+}
+
+.book-information{
+  padding: 0;
+  text-align: center;
+  position: relative;
+
+  h3{
+    font-weight: bold;
+    padding-top: 1rem;
+    margin: 0;
+  }
+
+  p{
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+}
+
+.book-year{
+  font-style: italic;
+  text-decoration: underline;
+}
+
+
+
+
+@media (min-width: 992px){
+  .book{
+    display: flex;
+  }
+  #button-book{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+  .book-information{
+    padding: 0 0 0 1rem;
+    text-align: left;
+
+    h3{
+      padding: 0;
+      margin: 0;
+    }
+
+    p{
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .book-description{
+    text-align: justify;
+    font-size: 1.2rem;
+  }
+}
+
+.bulk-reminder {
+  font-size: 1.2rem;
+  background-color: #dbdbdb;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-style: italic;
+  border-radius: 4px;
+  box-shadow: 1px 2px 3px rgb(179, 193, 217);
+
+  a {
+    text-decoration: underline;
+  }
+}
