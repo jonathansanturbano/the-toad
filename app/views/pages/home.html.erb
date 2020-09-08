@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="text-center">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <% @homephotos.each do |homephoto| %>
+            <div class="swiper-slide">
+                <%= cl_image_tag homephoto.photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+    <br>
+
+</div>
+

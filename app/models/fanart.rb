@@ -1,0 +1,2 @@
+class Fanart < ApplicationRecord
+end

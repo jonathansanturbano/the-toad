@@ -1,0 +1,24 @@
+<% provide(:title, 'Books') %>
+
+<div class="text-center">
+  <div class="books">
+    <% @books.each do |book| %>
+      <div class="book">
+        <div style="width: 240px; height: 180px; margin: auto; border-radius: 4px; box-shadow: 1px 2px 3px rgb(179, 193, 217); position: relative">
+          <%= cl_image_tag(book.photos.first.key, :width => 240, :height => 180, :crop => "fill") %>
+        <% if book.category == "signed" %>
+          <p class="signed-banner">SIGNED COPY</p>
+        <% end %>
+        </div>
+        <div class="book-information">
+          <h3><%= book.title %><span class="badge">  (<%= book.price %>€) </span></h3>
+          <p class="book-year"><%= book.year %></p>
+          <p class="book-description"><%= book.description %></p>
+          <%= link_to book_path(book) do %>
+          <div class="button" id="button-book">Book Details</div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

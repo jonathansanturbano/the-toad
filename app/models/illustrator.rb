@@ -1,0 +1,2 @@
+class Illustrator < ApplicationRecord
+end

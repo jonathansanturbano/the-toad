@@ -1,0 +1,73 @@
+<div class="text-center">
+
+  <% if @basket.basketItems.count == 0 %>
+    <h1 class="basket-title">Your basket is empty</h1>
+
+  <% else %>
+      <% basketItems = @basket.basketItems.sort_by { |item| item.created_at } %>
+      <% basketItems.each do |item| %>
+        <div class="purchase-card" id="item-<%= item.id  %>">
+          <%= cl_image_tag(item.buyable.photos.first.key, :width => 150, :height => 150, :crop => :fill )%>
+          <div>
+            <% if item.buyable.class == Book && item.buyable.category == "signed" %>
+              <%= "#{item.buyable.title} (signed)" %>
+            <% else %>
+              <%= item.buyable.title %>
+            <% end %>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <% if item.quantity > 1 %>
+              <span>
+                <%= simple_form_for(item, remote: true) do |f| %>
+                   <%= f.input :quantity, :as => "hidden", :value => "-1" %>
+                <%= f.button :submit, '-', class: "item-updater" %>
+                <% end %>
+              </span>
+            <% else %>
+            <span style="width: 32px; height: 32px; margin: 16px">
+            </span>
+            <% end %>
+            <p style="white-space: nowrap; margin: 0; align-self: center">Quantity: <%= item.quantity %></p>
+            <span>
+              <%= simple_form_for(item, remote: true) do |f| %>
+                 <%= f.input :quantity, :as => "hidden", :value => "+1" %>
+              <%= f.button :submit , '+', class: "item-updater" %>
+              <% end %>
+            </span>
+          </div>
+          <div><%= item.total_price_item %>€</div>
+          <div class="delete-icon">
+            <%= link_to basket_item_path(item, remote: true), method: :delete do %>
+              <i class="fas fa-trash" style="font-size: 1.5rem; color: grey"></i>
+            <% end %>
+          </div>
+      </div>
+      <% end %>
+      <div class="d-flex justify-content-center">
+        <p class="total-price-indicator">Total Price: <%= @basket.price_cents.to_f / 100 %>€</p>
+      </div>
+  <% end %>
+
+  <% unless @basket.basketItems.count == 0 %>
+
+    <form id="myform" class="button" action="/checkout" method="post">
+
+      <button type="button"
+        data-vp-publickey="<%= ENV['VIVA_PUBLISHABLE_KEY'] %>"
+        data-vp-baseurl="https://demo.vivapayments.com"
+        data-vp-lang="en"
+        data-vp-disablewallet
+        data-vp-amount="<%= @basket.price_cents %>"
+        data-vp-background-color="#E1A509"
+        data-vp-hover-background-color="#777777"
+        data-vp-text="Purchase"
+        data-vp-description="Your Order">
+      </button>
+    </form>
+  <% end %>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://demo.vivapayments.com/web/checkout/js"></script>

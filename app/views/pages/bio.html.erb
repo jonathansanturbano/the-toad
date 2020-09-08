@@ -1,0 +1,18 @@
+<div class="text-center">
+
+  <h2 class="illustrator-title">The Writer</h2>
+
+  <div class="illustrator-card">
+    <%= image_tag "Sal_Hendrie.jpg" %>
+    <p class="bio-description"> Sal Hendrie was born in Paris, France, in 1994. After living most of his life in the French capital, he moved to Berlin to study music and literature. The following year, he moved to Leiden, a charming Dutch town boasting many canals. That is where The Boy and The Toad came to life. A year later, while living in Hanoi, Vietnam, he got in touch with Nguyễn Thanh Vũ, and asked him if he would like to illustrate the story Sal Hendrie was born in Paris, France, in 1994. After living most of his life in the French capital, he moved to Berlin to study music and literature. The following year, he moved to Leiden, a charming Dutch town boasting many canals. That is where The Boy and The Toad came to life. A year later, while living in Hanoi, Vietnam, he got in touch with Nguyễn Thanh Vũ, and asked him if he would like to illustrate the story.</p>
+  </div>
+
+  <h2 class="illustrator-title">The Illustrator</h2>
+
+  <% @illustrators.each do |illustrator| %>
+    <div class="illustrator-card">
+      <%= image_tag "Nguyen.jpg" %>
+      <p class="bio-description"><%= illustrator.description %></p>
+    </div>
+  <% end %>
+</div>
