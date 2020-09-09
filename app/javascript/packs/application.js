@@ -34,6 +34,7 @@ import { initCart } from '../components/cart';
 document.addEventListener('turbolinks:load', () => {
   initModalOnClick();
   initSwiper();
-  if (document.querySelector('.add'))
-  initCart();
+  if (document.querySelector('.add')) {
+    initCart();
+  };
 });
