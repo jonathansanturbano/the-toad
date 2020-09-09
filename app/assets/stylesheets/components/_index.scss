@@ -11,3 +11,12 @@
 @import "modal";
 @import "swiper";
 @import "cart";
+
+body {
+    margin-bottom: 130px;
+    background-color: $light-bisque;
+}
+
+p {
+  font-size: 1.2rem;
+}
