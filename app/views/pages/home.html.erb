@@ -9,6 +9,8 @@
         </div>
     </div>
     <br>
-
+    <% if !@book.nil? %>
+      <%= link_to "Order Signed Books", book_path(@book), class: "button" %>
+    <% end %>
 </div>
 

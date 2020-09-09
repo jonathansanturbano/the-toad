@@ -24,11 +24,16 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { initModalOnClick } from '../components/modal';
+import { initSwiper } from '../components/swiper';
+import { initCart } from '../components/cart';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  initModalOnClick();
+  initSwiper();
+  if (document.querySelector('.add'))
+  initCart();
 });

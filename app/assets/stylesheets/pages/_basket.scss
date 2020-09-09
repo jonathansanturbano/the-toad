@@ -1,3 +1,62 @@
+.purchase-card {
+  background-color: $light-blue;
+  padding: 1rem;
+  position: relative;
+  margin: 1rem;
+
+  border-radius: 4px;
+  box-shadow: 1px 2px 3px rgb(179, 193, 217);
+
+  img {
+    border-radius: 4px;
+    box-shadow: 1px 2px 3px rgb(179, 193, 217);
+  }
+}
+
+
+.item-updater{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgb(198, 194, 139);
+  margin: 1rem;
+  padding: 0;
+}
+
+@media (min-width: 992px){
+  .purchase-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      width: 150px;
+    }
+  }
+}
+
+.delete-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+}
+
+.basket-title {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: $yellow;
+  font-style: italic;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.basket-photo {
+  box-shadow: 2px 3px 2px 0 #d2c8e5;
+
+}
+
+
 .total-price-indicator {
   margin-right: 1rem;
   font-size: 1.3rem;
