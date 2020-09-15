@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.7'
 gem "devise"
 gem 'activeadmin'
 gem 'cloudinary', '~> 1.16.0'
-
+gem 'mail_form'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
