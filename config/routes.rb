@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'contacts/new'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { confirmations: 'confirmations' }
@@ -23,4 +22,5 @@ Rails.application.routes.draw do
   resources :basket_items, only: [:destroy, :update]
 
   post "/checkout", to: "pages#checkout"
+  # post "/api/transactions"
 end
