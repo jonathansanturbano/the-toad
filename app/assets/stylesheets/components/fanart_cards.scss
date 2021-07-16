@@ -1,0 +1,63 @@
+.fanart-cards {
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
+.fanart-card {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.fanart-author {
+  background-color: rgba(230, 230, 230, 0.4);
+  border-radius: 4px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .fanart-card {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+
+    img {
+      height: 500px;
+      width: 80%;
+      object-fit: cover;
+    }
+  }
+
+  .fanart-author {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fanart-card {
+    width: 70%;
+
+    img {
+      width: 70%;
+    }
+  }
+
+  .fanart-author {
+    width: 70%;
+    margin: auto;
+  }
+}

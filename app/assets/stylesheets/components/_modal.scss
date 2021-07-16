@@ -1,17 +1,17 @@
-.smodal{
+.smodal {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 0;
-  left: 0;
-  display: none;
+  right: -100%;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2;
 }
 
-.modal-content{
+.modal-content {
   width: 95%;
   height: 95%;
   background-color: white;
@@ -21,7 +21,7 @@
   justify-content: center;
   position: sticky;
 
-  a{
+  a {
     margin: 0.5rem;
     color: rgba(163, 140, 18, 1);
     font-size: 2rem;
@@ -29,16 +29,16 @@
   }
 }
 
-.close{
+.close {
+  font-family: Arial;
   position: absolute;
   top: 6px;
   right: 14px;
-  font-size: 32px;
-  transform: rotate(45deg);
+  font-size: 44px;
   cursor: pointer;
 }
 
-#dropdown{
+#dropdown {
   cursor: pointer;
   position: fixed;
   top: 0;
@@ -50,7 +50,7 @@
   z-index: 2;
 }
 
-.links{
+.links {
   display: flex;
   flex-direction: column;
   position: relative;

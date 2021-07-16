@@ -1,17 +1,34 @@
 <% provide(:title, 'FanArt') %>
 
-<div class="swiper-container" id="swipe-container">
+<!-- <div class="swiper-container" id="swipe-container">
     <div class="swiper-wrapper" id="swipe-wrapper">
-      <% i = 1 %>
-      <% @fanarts.each do |fanart| %>
+      <%# i = 1 %>
+      <%# @fanarts.each do |fanart| %>
         <div class="swiper-slide">
-          <%= cl_image_tag fanart.photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
+          <%#= cl_image_tag fanart.photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
           <div class="fanart-author">
-            <p><%= fanart.author%></p>
-            <p><%= "#{i} / #{@fanarts.count}" %> </p>
+            <p><%#= fanart.author%></p>
+            <p><%#= "#{i} / #{@fanarts.count}" %> </p>
           </div>
-          <% i += 1 %>
         </div>
-      <% end %>
+        <%# i += 1 %>
+      <%# end %>
     </div>
+</div> -->
+
+<div class="fanart-cards">
+  <% @fanarts.each_with_index do |fanart, index| %>
+    <div
+      class="fanart-card"
+      data-aos="<%= index % 2 == 0 ? 'fade-left' : 'fade-right' %>"
+      data-aos-duration="2000"
+      data-aos-easing="ease-in-out"
+      data-aos-offset="300"
+    >
+      <%= cl_image_tag fanart.photo.key %>
+      <div class="fanart-author">
+        <p><%= fanart.author%></p>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -1,5 +1,5 @@
 ActiveAdmin.register Fanart do
-  permit_params :author
+  permit_params :author, :photo
 
   index do
     selectable_column

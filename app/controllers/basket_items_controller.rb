@@ -1,6 +1,7 @@
 class BasketItemsController < ApplicationController
-
+  before_action :find_basket, only: [:update, :destroy]
   def create
+    raise
     if !params[:book_id].nil?
       item = Book.find(params[:book_id])
       current_path = book_path(item.id)
@@ -21,24 +22,24 @@ class BasketItemsController < ApplicationController
   end
 
   def update
-    basket_item = BasketItem.find(params[:id])
     if params[:commit] == "-"
-      basket_item.update(quantity: basket_item.quantity - 1, total_price_item: basket_item.total_price_item - basket_item.buyable.price)
+      @basket_item.update(quantity: @basket_item.quantity - 1, total_price_item: @basket_item.total_price_item - @basket_item.buyable.price)
     else
-      basket_item.update(quantity: basket_item.quantity + 1, total_price_item: basket_item.total_price_item + basket_item.buyable.price)
+      @basket_item.update(quantity: @basket_item.quantity + 1, total_price_item: @basket_item.total_price_item + @basket_item.buyable.price)
     end
-    redirect_to basket_path(anchor: "item-#{basket_item.id}")
+    redirect_to basket_path(anchor: "item-#{@basket_item.id}")
   end
 
   def destroy
-    @basket_item = BasketItem.find(params[:id])
     @basket_item.destroy
     redirect_to basket_path
   end
 
-  # private
+  private
 
-
+  def find_basket
+    @basket_item = BasketItem.find(params[:id])
+  end
 
   # def basket_item_params
   #   params.require(:basket_item).permit(:buyable_type, :basket_id)

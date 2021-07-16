@@ -1,5 +1,7 @@
 <div class="menu">
-  <%= link_to "Books", books_path %>
+  <% unless current_page?(root_url) ||  current_page?(books_path) %>
+    <%= link_to "The Book", books_path %>
+  <% end %>
   <%= link_to "Goodies", goodies_path %>
   <%= link_to "Fan Art", fanarts_path %>
   <%= link_to "Bio", bio_path %>

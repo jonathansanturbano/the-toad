@@ -1,4 +1,10 @@
 // Specific CSS for your home-page
-  #home-photo{
+.home-page-aligner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#home-photo {
   width: 100%;
-  }
+}

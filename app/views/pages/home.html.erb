@@ -1,16 +1,17 @@
-<div class="text-center">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <% @homephotos.each do |homephoto| %>
-            <div class="swiper-slide">
-                <%= cl_image_tag homephoto.photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
-            </div>
-          <% end %>
-        </div>
-    </div>
-    <br>
-    <% if !@book.nil? %>
-      <%= link_to "Order Signed Books", book_path(@book), class: "button" %>
-    <% end %>
+<% provide(:title, "Home") %>
+<% provide(:description, "Welcome to the Wonderful Kingdom of Canalia") %>
+<div class="home-page-aligner">
+  <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <% @homephotos.each do |homephoto| %>
+          <div class="swiper-slide">
+              <%= cl_image_tag homephoto.photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+  <% if !@book.nil? %>
+    <%= link_to "About the Book", book_path(@book), class: "button" %>
+  <% end %>
 </div>
 

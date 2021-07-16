@@ -1,14 +1,10 @@
 .banner {
-  // background-size: cover;
-  // background-position: bottom right;
-  // padding: 80px 0;
-  // background-position-y: 300px;
-  // transform: rotate(180deg);
   position: sticky;
   top: 0;
   z-index: 2;
+  box-shadow: 0px 10px 25px rgba(170, 100, 40, 0.2);
 
-  img{
+  img {
     vertical-align: middle;
     border-style: none;
     width: 100%;
@@ -16,20 +12,5 @@
     object-fit: cover;
     object-position: 0 78%;
     transform: rotate(180deg);
-  }
-}
-
-@media (min-width: 100px) and (max-width: 575px) {
-  .banner{
-    margin-bottom: 1rem;
-
-    img{
-      vertical-align: middle;
-      border-style: none;
-      width: 100%;
-      object-fit: cover;
-      object-position: 0 78%;
-      transform: rotate(180deg);
-    }
   }
 }

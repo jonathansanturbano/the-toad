@@ -11,3 +11,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.wrapper {
+  position: relative;
+  min-height: calc(100vh - 90px - 90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    min-height: calc(100vh - 90px - 90px);
+    padding-top: 70px;
+  }
+}

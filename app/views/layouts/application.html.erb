@@ -5,9 +5,11 @@
   </head>
   <body>
     <%= render 'shared/banner' %>
-    <%= render 'shared/menu' %>
     <div class="container">
-      <%= yield %>
+      <div class="wrapper">
+        <%= render 'shared/menu' %>
+        <%= yield %>
+      </div>
     </div>
     <%= render 'shared/footer' %>
     <%= render 'shared/flashes' %>

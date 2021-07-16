@@ -1,6 +1,8 @@
+<% provide(:title, @goodie.title) %>
+<% provide(:description, @goodie.description) %>
 <div class="text-center">
-    <h2 class="book-title product"><%= @goodie.title %></h2>
-                <%= cl_image_tag @goodie.photos.first.key, :width=>270, :crop=>"scale" %>
+  <h2 class="book-title product"><%= @goodie.title %></h2>
+  <%= cl_image_tag @goodie.photos.first.key, :width=>270, :crop=>"scale" %>
   <div class="my-3">----------------------</div>
   <h3>Goodie Details</h3>
     <div class="book-detail">

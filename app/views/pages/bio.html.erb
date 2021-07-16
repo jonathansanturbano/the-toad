@@ -1,3 +1,5 @@
+<% provide(:title, "About the Creators") %>
+<% provide(:description, "Learn more about the writer Sal Hendrie and the illustrator Nguyễn Thanh Vũ") %>
 <div class="text-center">
 
   <h2 class="illustrator-title">The Writer</h2>
@@ -15,4 +17,6 @@
       <p class="bio-description"><%= illustrator.description %></p>
     </div>
   <% end %>
+
+  <%#= render "shared/mailchimp" %>
 </div>

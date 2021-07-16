@@ -1,4 +1,4 @@
-.icons-setter{
+.icons-setter {
   top: 0;
   width: 100vw;
   display: flex;
@@ -6,10 +6,9 @@
   align-items: center;
   height: 90px;
   position: absolute;
-
 }
 
-.home-button{
+.home-button {
   color: $yellow;
   background-color: rgba(254, 254, 252, 1);
   box-shadow: 1px 2px 2.3px;
@@ -22,7 +21,7 @@
   height: 3.9rem;
   width: 3.9rem;
   margin: 12px;
-  transition: color .5s;
+  transition: color 0.5s;
 
   &:hover {
     text-decoration: none;
@@ -31,9 +30,8 @@
   }
 }
 
-
 @media (min-width: 992px) {
-  .icons-setter{
+  .icons-setter {
     width: 100vw;
     display: flex;
   }
@@ -52,7 +50,10 @@
 //   }
 // }
 
-.menu{
+.menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
   margin: 1rem 0;
   text-align: center;
 }
@@ -97,7 +98,7 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .menu > * {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 }
 

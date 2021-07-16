@@ -3,11 +3,10 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
-
+require("@rails/ujs").start();
+require("turbolinks").start();
+require("@rails/activestorage").start();
+require("channels");
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -16,7 +15,6 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
@@ -24,17 +22,19 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { initModalOnClick } from '../components/modal';
-import { initSwiper } from '../components/swiper';
-import { initCart } from '../components/cart';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { initModalOnClick } from "../components/modal";
+import { initSwiper } from "../components/swiper";
+import { initCart } from "../components/cart";
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener("turbolinks:load", () => {
+  AOS.init();
   initModalOnClick();
   initSwiper();
-  if (document.querySelector('.add')) {
+  if (document.querySelector(".add")) {
     initCart();
-  };
+  }
 });
