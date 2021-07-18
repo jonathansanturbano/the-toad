@@ -23,7 +23,6 @@ require("channels");
 // External imports
 import "bootstrap";
 import AOS from "aos";
-import "aos/dist/aos.css";
 
 // Internal imports, e.g:
 import { initModalOnClick } from "../components/modal";
