@@ -6,26 +6,6 @@ import "swiper/components/effect-fade/effect-fade.scss";
 SwiperCore.use([Navigation, Pagination, EffectFade]);
 
 const initSwiper = () => {
-  if (document.querySelector(".fanart-author")) {
-    const fanSwiper = new Swiper(".swiper-container", {
-      // Optional parameters
-      speed: 1000,
-      loop: true,
-      roundLengths: true,
-      spaceBetween: 200,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-    });
-
-    const intervalID = window.setInterval(nextSlide, 3000);
-
-    function nextSlide() {
-      fanSwiper.slideNext(3000);
-    }
-  }
-
   if (
     document.querySelector(".button") &&
     document.querySelector(".button").textContent === "Order Signed Books"
