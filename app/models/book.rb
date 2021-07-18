@@ -10,5 +10,5 @@ class Book < ApplicationRecord
   validates :year, presence: true
   validates :price, presence: true
   validates :size, presence: true
-  validates :category, inclusion: { in: ["signed", "unsigned"] }
+  validates :signature_fee, presence: true
 end

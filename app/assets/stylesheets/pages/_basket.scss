@@ -10,11 +10,11 @@
   img {
     border-radius: 4px;
     box-shadow: 1px 2px 3px rgb(179, 193, 217);
+    margin-bottom: 1rem;
   }
 }
 
-
-.item-updater{
+.item-updater {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -23,7 +23,7 @@
   padding: 0;
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
   .purchase-card {
     display: flex;
     justify-content: space-between;
@@ -53,9 +53,7 @@
 
 .basket-photo {
   box-shadow: 2px 3px 2px 0 #d2c8e5;
-
 }
-
 
 .total-price-indicator {
   margin-right: 1rem;

@@ -3,8 +3,26 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  img {
+    border-radius: 4px;
+    height: 280px;
+    margin-top: 1rem;
+    object-fit: cover;
+    object-position: top right;
+    box-shadow: -3px 5px 20px rgba(180, 50, 0, 0.3);
+  }
 }
 
-#home-photo {
-  width: 100%;
+@media (min-height: 667px) {
+  .home-page-aligner img {
+    height: 350px;
+  }
+}
+
+@media (min-width: 768px) {
+  .home-page-aligner img {
+    height: 450px;
+    margin-top: 0;
+  }
 }

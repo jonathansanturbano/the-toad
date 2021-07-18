@@ -9,7 +9,7 @@
         <div class="purchase-card" id="item-<%= item.id  %>">
           <%= cl_image_tag(item.buyable.photos.first.key, :width => 150, :height => 150, :crop => :fill )%>
           <div class="d-flex justify-content-center align-items-center">
-            <% if item.buyable.class == Book && item.buyable.category == "signed" %>
+            <% if item.signed %>
               <p style="white-space: nowrap; margin: 0; align-self: center"><%= "#{item.buyable.title} (signed)" %></p>
             <% else %>
               <p style="white-space: nowrap; margin: 0; align-self: center"><%= item.buyable.title %></p>
@@ -29,7 +29,7 @@
             <% end %>
             <p style="white-space: nowrap; margin: 0; align-self: center">Quantity: <%= item.quantity %></p>
             <span>
-              <%= simple_form_for(item, remote: true) do |f| %>
+              <%= simple_form_for(item) do |f| %>
                  <%= f.input :quantity, :as => "hidden", :value => "+1" %>
               <%= f.button :submit , '+', class: "item-updater" %>
               <% end %>

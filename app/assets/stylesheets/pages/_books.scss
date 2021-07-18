@@ -1,23 +1,23 @@
-.book-details{
+.book-details {
   display: grid;
   grid-template-columns: 1fr;
   margin: 1rem auto;
 }
 
-.book-detail{
-  p:first-child{
+.book-detail {
+  p:first-child {
     font-weight: bold;
     margin-bottom: 0;
     text-decoration: underline;
     font-size: 1.4rem;
   }
 
-  p:last-child{
+  p:last-child {
     font-size: 1.3rem;
   }
 }
 
-.book-title{
+.book-title {
   text-decoration: underline;
   text-underline-position: under;
   text-decoration-color: $yellow;
@@ -25,16 +25,15 @@
 }
 
 @media (min-width: 767px) and (max-width: 991px) {
-  .book-details{
+  .book-details {
     grid-template-columns: repeat(2, 1fr);
     margin: 1rem 3rem;
   }
 }
 
-@media (min-width: 992px){
-  .book-details{
+@media (min-width: 992px) {
+  .book-details {
     grid-template-columns: repeat(3, 1fr);
     margin: 1rem 3rem;
   }
 }
-

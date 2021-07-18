@@ -12,15 +12,13 @@
       <% end %>
     <% end %>
     <% unless (controller_name == 'pages' && action_name == 'checkout') || (controller_name == 'baskets' && action_name == 'show') %>
-      <% if user_signed_in? %>
-        <% if @basket.basketItems.count == 0 %>
-          <%= link_to basket_path, class: "cart hidden" do %>
-            <i class="fas fa-shopping-cart"> <span class="cart-number"><%= @basket.quantity %></span></i>
-          <% end %>
-          <% else %>
-          <%= link_to basket_path, class: "cart" do %>
-            <i class="fas fa-shopping-cart"> <span class="cart-number"><%= @basket.quantity %></span></i>
-          <% end %>
+      <% if user_signed_in? && @basket.basketItems.count == 0 %>
+        <%= link_to basket_path, class: "cart hidden" do %>
+          <i class="fas fa-shopping-cart"></span></i>
+        <% end %>
+      <% else %>
+        <%= link_to basket_path, class: "cart" do %>
+          <i class="fas fa-shopping-cart"></span></i>
         <% end %>
       <% end %>
     <% end %>

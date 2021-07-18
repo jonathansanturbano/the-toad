@@ -66,3 +66,19 @@
     height: 450px;
   }
 }
+
+.swiper-pagination-bullet-active {
+  background: lightgray !important;
+}
+
+.show-image {
+  width: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+@media (min-width: 768px) {
+  .show-image {
+    width: fit-content;
+  }
+}

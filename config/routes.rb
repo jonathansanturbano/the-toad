@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   get '/bio', to: 'pages#bio';
   get '/basket', to: 'baskets#show', as: 'basket';
   resources :fanarts, only: [:index]
-  resources :blogs, only: [:index, :show]
-  resources :books, only: [:index, :show] do
+  # resources :blogs, only: [:index, :show]
+  resources :books, only: [:show] do
     resources :basket_items, only: [:create]
   end
-  resources :events, only: [:index]
+  # resources :events, only: [:index]
   resources :goodies, only: [:index, :show] do
     resources :basket_items, only: [:create]
   end

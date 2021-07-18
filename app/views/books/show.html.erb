@@ -1,21 +1,21 @@
 <div class="text-center mt-3">
-    <h2 class="book-title product">
-      <%= @book.title %>
-      <% if @book.category == "signed" %>
-      (signed)
-      <% end %>
-    </h2>
-    <div class="swiper-container my-4" id="swipe-container">
-        <div class="swiper-wrapper" id="swipe-wrapper">
-          <% @book.photos.each do |photo| %>
-            <div class="swiper-slide swipe-slide">
-                <%= cl_image_tag photo.key, :height=>450, :gravity=>'auto', :crop=>'fill' %>
-            </div>
-          <% end %>
+  <h2 class="book-title product"><%= @book.title %></h2>
+  <div class="swiper-container my-4" id="swipe-container">
+    <div class="swiper-wrapper" id="swipe-wrapper">
+      <% @book.photos.each do |photo| %>
+        <div class="swiper-slide swipe-slide">
+          <%= cl_image_tag photo.key, :height=>450, :gravity=>'south_west', :crop=>'fill', class: "show-image" %>
         </div>
-        <div class="swiper-pagination"></div>
+      <% end %>
     </div>
-    <p class="book-description"><%= @book.description %></p>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev" style="color: lightgray;"></div>
+    <div class="swiper-button-next" style="color: lightgray;"></div>
+  </div>
+  <p class="book-description"><%= @book.description %></p>
   <div class="my-3">----------------------</div>
   <h3>Book Details</h3>
   <%= form_with model: [@book, @basketItem] do |form| %>
@@ -47,10 +47,10 @@
         </div>
       </div>
     </div>
-    <%= form.submit class: "button add", value: "Add to Cart" %>
+    <input type="submit" name="Add to Cart" value="Add Book" class="button add" style="border: none">
   <% end %>
 
-  <%= link_to "Add to Cart", book_basket_items_path(@book), method: :create, class: "button add" %>
+  <%#= link_to "Add to Cart", book_basket_items_path(@book), method: :create, class: "button add" %>
 
   <p class="bulk-reminder">For orders in bulk, don't hesitate to reach out <%= link_to "directly", new_contact_path %> for a personalised quote!</p>
 

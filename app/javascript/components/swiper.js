@@ -1,9 +1,13 @@
 import Swiper from "swiper";
+import SwiperCore, { Navigation, Pagination, EffectFade } from "swiper/core";
 import "swiper/swiper-bundle.css";
+import "swiper/components/effect-fade/effect-fade.scss";
+
+SwiperCore.use([Navigation, Pagination, EffectFade]);
 
 const initSwiper = () => {
   if (document.querySelector(".fanart-author")) {
-    var fanSwiper = new Swiper(".swiper-container", {
+    const fanSwiper = new Swiper(".swiper-container", {
       // Optional parameters
       speed: 1000,
       loop: true,
@@ -26,7 +30,7 @@ const initSwiper = () => {
     document.querySelector(".button") &&
     document.querySelector(".button").textContent === "Order Signed Books"
   ) {
-    var homeSwiper = new Swiper(".swiper-container", {
+    const homeSwiper = new Swiper(".swiper-container", {
       speed: 1000,
       loop: true,
       spaceBetween: 300,
@@ -51,34 +55,25 @@ const initSwiper = () => {
   }
 
   if (document.querySelector(".book-details")) {
-    var showSwiper = new Swiper(".swiper-container", {
+    const showSwiper = new Swiper(".swiper-container", {
       // Optional parameters
-      speed: 1000,
-      loop: true,
-      roundLengths: true,
-      spaceBetween: 300,
-      autoplay: {
-        delay: 2500,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
       },
-      // If we need pagination
+      speed: 2000,
+      loop: true,
+      autoplay: true,
+      roundLengths: true,
       pagination: {
         el: ".swiper-pagination",
       },
 
-      // Navigation arrows
-      // navigation: {
-      //   nextEl: '.swiper-button-next',
-      //   prevEl: '.swiper-button-prev',
-      // },
-
-      // And if we need scrollbar
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
-
-    const intervalID = window.setInterval(nextSlide, 2000);
-
-    function nextSlide() {
-      showSwiper.slideNext(3000);
-    }
   }
 };
 

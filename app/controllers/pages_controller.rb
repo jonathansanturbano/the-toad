@@ -5,7 +5,6 @@ class PagesController < ApplicationController
 
   def home
     @homephotos = Homephoto.all.order(:order)
-    @book = Book.find_by(category: "signed")
   end
 
   def bio

@@ -3,8 +3,11 @@
   height: 90px;
   bottom: 0;
   display: flex;
-  justify-content: center;
-  background-color: ghostwhite;
+  background-image: asset-url("banner.gif");
+  background-position: top;
+  box-shadow: 0px -10px 25px rgba(170, 100, 40, 20%);
+  filter: grayscale(0.8);
+  margin: 0;
   box-shadow: 0px -10px 25px rgba(170, 100, 40, 0.2);
   margin: 0;
   width: 100%;

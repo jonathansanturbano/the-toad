@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :set_book
   before_action :set_basket
 
   private
@@ -10,5 +11,9 @@ class ApplicationController < ActionController::Base
     @basket.basketItems.each do |item|
       @basket.quantity += item.quantity
     end
+  end
+
+  def set_book
+    @book = Book.first
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_15_092358) do
+ActiveRecord::Schema.define(version: 2021_07_17_185403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_09_15_092358) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.float "total_price_item"
+    t.boolean "signed", default: false
     t.index ["basket_id"], name: "index_basket_items_on_basket_id"
     t.index ["buyable_type", "buyable_id"], name: "index_basket_items_on_buyable_type_and_buyable_id"
   end
@@ -100,10 +101,10 @@ ActiveRecord::Schema.define(version: 2020_09_15_092358) do
     t.integer "pages"
     t.integer "year"
     t.float "price"
-    t.string "category"
     t.string "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "signature_fee"
   end
 
   create_table "contacts", force: :cascade do |t|
