@@ -1,0 +1,39 @@
+  <article class="purchase-card" data-controller="basket-items" data-basket-items-target="card">
+    <%= cl_image_tag(item.buyable.photos.first.key, :width => 150, :height => 150, :crop => :fill )%>
+    <div class="d-flex justify-content-center align-items-center">
+        <p style="white-space: nowrap; margin: 0; align-self: center">
+          <%= item.signed ? "#{item.buyable.title} (signed)" : item.buyable.title %>
+        </p>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+      <% if item.quantity > 1 %>
+        <span>
+          <%= simple_form_for(item, remote: true) do |f| %>
+             <%= f.input :quantity, :as => "hidden", :value => "-1" %>
+            <%= f.button :submit, '-', class: "item-updater" %>
+          <% end %>
+        </span>
+      <% else %>
+        <span style="margin: 32px"></span>
+      <% end %>
+      <p style="white-space: nowrap; margin: 0; align-self: center">
+        Quantity:
+        <span style="width: 32px; height: 32px; text-align: center">
+          <%= item.quantity %>
+        </span>
+      </p>
+      <span>
+        <%= simple_form_for(item, remote: true) do |f| %>
+           <%= f.input :quantity, :as => "hidden", :value => "+1" %>
+        <%= f.button :submit , '+', class: "item-updater" %>
+        <% end %>
+      </span>
+    </div>
+    <div><%= item.total_price_item.round(2) %>€</div>
+    <div class="delete-icon">
+      <%= link_to basket_item_path(item, remote: true), method: :delete do %>
+        <i class="fas fa-trash" style="font-size: 1.5rem; color: #a02323"></i>
+      <% end %>
+    </div>
+    <span id="item-<%= item.id  %>" style="position: absolute; top: -100px;"></span>
+</article>
