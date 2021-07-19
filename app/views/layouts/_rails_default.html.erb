@@ -3,7 +3,9 @@
 <%= csp_meta_tag %>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="<%= (yield(:description)) %>">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<% if params[:controller] == "fanarts" %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% end %>
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>

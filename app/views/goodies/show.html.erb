@@ -1,17 +1,17 @@
 <% provide(:title, @goodie.title) %>
 <% provide(:description, @goodie.description) %>
-<div class="text-center">
+<div class="text-center mt-3">
   <h2 class="book-title product"><%= @goodie.title %></h2>
   <%= cl_image_tag @goodie.photos.first.key, :width=>270, :crop=>"scale" %>
   <div class="my-3">----------------------</div>
   <h3>Goodie Details</h3>
-    <div class="book-detail">
-      <p>Description</p>
-      <p><span class="product-price"><%= @goodie.description%></span></p>
-    </div>
-    <div class="book-detail">
-      <p>Price</p>
-      <p><span class="product-price"><%= @goodie.price%></span>€</p>
-    </div>
-  <%= link_to "Add to Cart", goody_basket_items_path(@goodie), method: :create, class: "button add" %>
+  <div class="book-detail">
+    <p>Description</p>
+    <p><span class="product-price"><%= @goodie.description%></span></p>
+  </div>
+  <div class="book-detail">
+    <p>Price</p>
+    <p><span class="product-price"><%= @goodie.price%></span>€</p>
+  </div>
 </div>
+<%= link_to "Add to Cart", goody_basket_items_path(@goodie), method: :create, class: "button add" %>

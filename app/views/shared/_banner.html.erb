@@ -16,7 +16,8 @@
         <%= link_to basket_path, class: "cart hidden" do %>
           <i class="fas fa-shopping-cart"></span></i>
         <% end %>
-      <% else %>
+      <% end %>
+      <% if user_signed_in? && @basket.basketItems.count > 0 %>
         <%= link_to basket_path, class: "cart" do %>
           <i class="fas fa-shopping-cart"></span></i>
         <% end %>

@@ -13,6 +13,14 @@
 @import "components/index";
 @import "pages/index";
 
+body {
+  background-color: $light-bisque;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
 .wrapper {
   position: relative;
   min-height: calc(100vh - 90px - 90px);
@@ -26,4 +34,15 @@
     min-height: calc(100vh - 90px - 90px);
     padding-top: 70px;
   }
+}
+
+.button {
+  transition: all 0.3s linear;
+  border: 1px solid transparent;
+}
+
+.button:hover {
+  background-color: $light-bisque;
+  color: $yellow;
+  border: 1px $yellow solid;
 }

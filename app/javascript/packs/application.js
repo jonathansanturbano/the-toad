@@ -23,6 +23,7 @@ require("channels");
 // External imports
 import "bootstrap";
 import AOS from "aos";
+import "canvas-confetti";
 
 // Internal imports, e.g:
 import { initModalOnClick } from "../components/modal";

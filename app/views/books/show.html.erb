@@ -1,3 +1,5 @@
+<% provide(:title, @book.title) %>
+<% provide(:description, @book.description) %>
 <div class="text-center mt-3">
   <h2 class="book-title product"><%= @book.title %></h2>
   <div class="swiper-container my-4" id="swipe-container">
@@ -18,7 +20,7 @@
   <p class="book-description"><%= @book.description %></p>
   <div class="my-3">----------------------</div>
   <h3>Book Details</h3>
-  <%= form_with model: [@book, @basketItem] do |form| %>
+  <%= form_with model: [@book, @basketItem], local: true do |form| %>
     <div class="book-details">
       <div class="book-detail">
         <p>Price</p>
@@ -40,17 +42,13 @@
         <p>Color scheme</p>
         <p><%= @book.color%></p>
       </div>
-      <div class="book-detail">
-        <div>
-          <%= form.check_box :signed %>
-          <%= form.label :signed, "+3.00€ for signed copy", style: "border: none" %>
-        </div>
-      </div>
     </div>
-    <input type="submit" name="Add to Cart" value="Add Book" class="button add" style="border: none">
+    <div>
+      <%= form.check_box :signed %>
+      <%= form.label :signed, "+3.00€ for signed copy", style: "border: none" %>
+    </div>
+    <input type="submit" name="Add to Cart" value="Add Book" class="button add hover">
   <% end %>
-
-  <%#= link_to "Add to Cart", book_basket_items_path(@book), method: :create, class: "button add" %>
 
   <p class="bulk-reminder">For orders in bulk, don't hesitate to reach out <%= link_to "directly", new_contact_path %> for a personalised quote!</p>
 
