@@ -1,0 +1,11 @@
+boy_and_toad:
+  title: "The Boy and the Toad"
+  description: "Great story about a toad"
+  color: "yellow, purple and green"
+  age: "5+"
+  material: "paper"
+  pages: 25
+  year: 2019
+  price: 15.99
+  size: "30 x 15 x 10"
+  signature_fee: 3.00

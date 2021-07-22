@@ -27,7 +27,7 @@ ActiveAdmin.register Book do
       f.input :age
       f.input :material
       f.input :year
-      f.input :price
+      f.input :price, input_html: { min: 0 }
       f.input :pages
       f.input :signature_fee
     end
