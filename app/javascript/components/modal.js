@@ -3,10 +3,10 @@ const initModalOnClick = () => {
   const dropdown = document.getElementById("dropdown");
   const close = document.querySelector(".close");
   dropdown.addEventListener("click", (event) => {
-    modal.style.right = 0;
+    modal.style.transform = "translateX(-100%)";
   });
   close.addEventListener("click", (event) => {
-    modal.style.right = "-100%";
+    modal.style.transform = "translateX(0)";
   });
 };
 

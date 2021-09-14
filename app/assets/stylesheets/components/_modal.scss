@@ -11,7 +11,7 @@
   z-index: 2;
 }
 
-.modal-content {
+.smodal-content {
   width: 95%;
   height: 95%;
   background-color: white;
@@ -19,6 +19,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: sticky;
 
   a {

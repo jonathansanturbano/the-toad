@@ -11,13 +11,13 @@
         <i class="fab fa-fort-awesome"></i>
       <% end %>
     <% end %>
-    <% unless (controller_name == 'pages' && action_name == 'checkout') || (controller_name == 'baskets' && action_name == 'show') %>
-      <% if user_signed_in? && @basket.basketItems.count == 0 %>
+    <% unless user_is_on_purchasing_pages? %>
+      <% if user_has_empty_cart? %>
         <%= link_to basket_path, class: "cart hidden" do %>
           <i class="fas fa-shopping-cart"></span></i>
         <% end %>
       <% end %>
-      <% if user_signed_in? && @basket.basketItems.count > 0 %>
+      <% if user_has_items? %>
         <%= link_to basket_path, class: "cart" do %>
           <i class="fas fa-shopping-cart"></span></i>
         <% end %>
